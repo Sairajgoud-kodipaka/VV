@@ -1,4 +1,10 @@
+
+
+
+
+import 'tailwindcss/tailwind.css'
 import React, { useState } from 'react';
+
 import { motion } from 'framer-motion';
 import ResultCard from '../components/ResultCard';
 
