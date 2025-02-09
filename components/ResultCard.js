@@ -29,7 +29,7 @@ const ResultCard = ({ result, loading }) => {
           <span className="text-gray-900"> {result.studentName || ""}</span>
         </div>
         <div>
-          <strong className="text-gray-700">Roll No:</strong>
+          <strong className="text-gray-700 ">Roll No:</strong>
           <span className="text-gray-900"> {result.hallTicket || ""}</span>
         </div>
       </div>
