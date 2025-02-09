@@ -2,7 +2,7 @@ import React from "react";
 
 const ResultCard = ({ result, loading }) => {
   if (loading) {
-    return <p className="text-center from-neutral-600">Loading results...</p>;
+    return <p className="text-center text-neutral-600">Loading results...</p>;
   }
 
   if (!result) {
@@ -12,25 +12,25 @@ const ResultCard = ({ result, loading }) => {
   console.log("Result in ResultCard:", result); // Debugging
 
   return (
-    <div className="container max-w-1 mt-8 p-4">
-    {/* University Header Section */}
-    <div className="text-center mb-4 mt-4">
-      <h2 className="text-2xl font-semibold text-gray-800">
-        VISHWA VISHWANI UNIVERSITY
-      </h2>
-      <p className="text-gray-600">Hyderabad - TS.(INDIA)</p>
-      <p className="text-gray-700 font-bold">SEMESTER GRADE REPORT</p>
-    </div>
+    <div className="container max-w-4xl mt-8 p-4">
+      {/* University Header Section */}
+      <div className="text-center mb-4 mt-4">
+        <h2 className="text-2xl font-semibold text-gray-800">
+          VISHWA VISHWANI UNIVERSITY
+        </h2>
+        <p className="text-gray-600">Hyderabad - TS.(INDIA)</p>
+        <p className="text-gray-700 font-bold">SEMESTER GRADE REPORT</p>
+      </div>
 
       {/* Student Info Section */}
-      <div className="mb-4 grid grid-cols-2 gap-4">
-        <div>
-          <strong className="text-gray-700 mb-4">Name:</strong>
-          <span className="text-gray-900"> {result.studentName || ""}</span>
+      <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="text-center">
+          <strong className="text-gray-700 block mb-1">Name:</strong>
+          <span className="text-gray-900">{result.studentName || "N/A"}</span>
         </div>
-        <div>
-          <strong className="text-gray-700 ">Roll No:</strong>
-          <span className="text-gray-900"> {result.hallTicket || ""}</span>
+        <div className="text-center">
+          <strong className="text-gray-700 block mb-1">Roll No:</strong>
+          <span className="text-gray-900">{result.hallTicket || "N/A"}</span>
         </div>
       </div>
 
@@ -83,16 +83,16 @@ const ResultCard = ({ result, loading }) => {
       {/* Footer Section */}
       <div className="mt-4">
         <strong className="text-gray-700">SCGPA:</strong>
-        <span className="text-gray-900"> {result.scgpa || ""}</span>
+        <span className="text-gray-900"> {result.scgpa || "N/A"}</span>
       </div>
       <div className="mt-2">
         <strong className="text-gray-700">CGPA:</strong>
-        <span className="text-gray-900"> {result.cgpa || ""}</span>
+        <span className="text-gray-900"> {result.cgpa || "N/A"}</span>
       </div>
       <div className="mt-2">
         <strong className="text-gray-700">Result:</strong>
         <span className={`text-gray-900 font-bold ${result.RESULT === 'PASSED' ? 'text-green-600' : 'text-red-600'}`}>
-          {result.RESULT || ""}
+          {result.RESULT || "N/A"}
         </span>
       </div>
     </div>
