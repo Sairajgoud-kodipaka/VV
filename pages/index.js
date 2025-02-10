@@ -41,6 +41,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-5 flex items-center justify-center">
+       {/* Version Text in Top-Left Corner */}
+      <div className="max-w-md mx-auto absolute top-8 left-4 text-gray-300 text-sm font-semibold">
+        V.0.1
+      </div>
+      
       <div className="container mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
