@@ -24,7 +24,7 @@ const ResultCard = ({ result, loading }) => {
         setIsBusy(true);
         try {
             const canvas = await html2canvas(componentRef.current, {
-                scale: 2,
+                scale: 10,
                 useCORS: true,
             });
 
