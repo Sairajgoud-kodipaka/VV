@@ -102,22 +102,16 @@ const ResultCard = ({ result, loading }) => {
                     </table>
                 </div>
 
-                <div className="text-center mt-6 text-xs sm:text-sm">
-                    <div className="inline-block mr-2">
-                        <strong className="text-gray-700">SCGPA:</strong>
-                        <span className="text-gray-900">{result.scgpa || "N/A"}</span>
-                    </div>
-                    <div className="inline-block mr-2">
-                        <strong className="text-gray-700">CGPA:</strong>
-                        <span className="text-gray-900">{result.cgpa || "N/A"}</span>
-                    </div>
-                    <div className="inline-block">
-                        <strong className="text-gray-700">Result:</strong>
-                        <span className={`font-bold ${result.RESULT === "PASSED" ? "text-green-600" : "text-red-600"}`}>{result.RESULT || "N/A"}</span>
-                    </div>
+                <div className="text-center mt-6 text-xs sm:text-base font-bold">
+                    <strong className="text-gray-700">RESULT: </strong>
+                    <span className={result.RESULT === "FAILED" ? "text-red-500" : "text-green-500"}>{result.RESULT || "N/A"}</span>
+                </div>
+
+                <div className="text-center mt-2 text-base sm:text-base">
+                    <strong className="text-gray-700">SCGPA:</strong> <span className="text-gray-900 mr-4">{result.RESULT === "FAILED" ? "N/A" : result.scgpa || "N/A"}</span>
+                    <strong className="text-gray-700">CGPA:</strong> <span className="text-gray-900">{result.RESULT === "FAILED" ? "N/A" : result.cgpa || "N/A"}</span>
                 </div>
             </div>
-
             <div className="mt-4 flex flex-col sm:flex-row justify-center gap-2 sm:gap-8">
                 <button onClick={handlePrint} className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded disabled:opacity-50 mt-2" disabled={isBusy}>
                     Print Result
