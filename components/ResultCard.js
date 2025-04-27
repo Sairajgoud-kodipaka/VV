@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Image from 'next/image';
+import { CheckCircleIcon, XCircleIcon, DocumentArrowDownIcon, PrinterIcon } from '@heroicons/react/24/solid';
 
 const ResultCard = ({ result, loading }) => {
     const componentRef = useRef();
@@ -114,11 +115,19 @@ const ResultCard = ({ result, loading }) => {
                 </div>
             </div>
             <div className="mt-4 flex flex-col sm:flex-row justify-center gap-2 sm:gap-8">
-                <button onClick={handlePrint} className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded disabled:opacity-50 mt-2" disabled={isBusy}>
-                    Print Result
+                <button
+                    onClick={handlePrint}
+                    className="flex items-center justify-center gap-2 bg-white/60 backdrop-blur-md border border-blue-300 shadow-lg hover:bg-blue-100/80 text-blue-700 font-bold py-3 px-8 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 disabled:opacity-50 mt-2"
+                    disabled={isBusy}
+                >
+                    <PrinterIcon className="h-6 w-6" /> Print Result
                 </button>
-                <button onClick={handleDownloadPdf} className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded disabled:opacity-50 mt-3" disabled={isBusy}>
-                    Download PDF
+                <button
+                    onClick={handleDownloadPdf}
+                    className="flex items-center justify-center gap-2 bg-white/60 backdrop-blur-md border border-green-300 shadow-lg hover:bg-green-100/80 text-green-700 font-bold py-3 px-8 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 disabled:opacity-50 mt-2"
+                    disabled={isBusy}
+                >
+                    <DocumentArrowDownIcon className="h-6 w-6" /> Download PDF
                 </button>
             </div>
         </div>
