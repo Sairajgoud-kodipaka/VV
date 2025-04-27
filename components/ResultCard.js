@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import Image from 'next/image';
 
 const ResultCard = ({ result, loading }) => {
     const componentRef = useRef();
@@ -55,7 +56,7 @@ const ResultCard = ({ result, loading }) => {
             <div className="w-full max-w-full md:max-w-4xl p-4 bg-white shadow-md rounded-lg overflow-hidden" ref={componentRef}>
                 <div className="text-center mb-4">
                     <div className="flex flex-col sm:flex-row items-center justify-center space-x-0 sm:space-x-4 bg-white p-4">
-                        <img src="logo.png" alt="VV Logo" className="h-10 w-10 sm:h-12 sm:w-12 mb-2 sm:mb-0" />
+                        <Image src="/logo.png" alt="VV Logo" width={48} height={48} className="h-10 w-10 sm:h-12 sm:w-12 mb-2 sm:mb-0" />
                         <h1 className="text-lg sm:text-2xl font-bold text-gray-800 text-center sm:text-left">
                             BS-MS AUTONOMOUS 2024-2025
                         </h1>
