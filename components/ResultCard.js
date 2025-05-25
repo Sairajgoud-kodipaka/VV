@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Image from 'next/image';
-import { CheckCircleIcon, XCircleIcon, DocumentArrowDownIcon, PrinterIcon } from '@heroicons/react/24/solid';
+import {  DocumentArrowDownIcon, PrinterIcon } from '@heroicons/react/24/solid';
 
 const ResultCard = ({ result, loading }) => {
     const componentRef = useRef();
